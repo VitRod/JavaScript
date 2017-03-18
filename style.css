@@ -1,20 +1,31 @@
 html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 body {
-  margin: 0;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
 }
 .gamefield {
-  height: 200px;
-  background: url(img/landscape.png) no-repeat;
-  background-size: auto 200px;
+  width: 100%;
+  height: 300px;
+  min-height 250px;
+  max-height: calc( 100% - 50px );
+  padding: 0 20%;
+  box-sizing: border-box;
+  background: #afafaf url(img/landscape.png) no-repeat;
+  background-size: 100% 100%;
 }
 .hole {
   display: inline-block;
-  width: 100px;
-  height: 200px;
+  text-align: center;
+  width: 20%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -23,13 +34,14 @@ body {
   height: 50px;
   background: url(img/balloon.png) no-repeat center center;
   background-size: 100% auto;
-  margin-left: 10px;
-  margin-top: 200px;
-  transition: margin-top 0.5s;
+  transition: top 0.5s;
+  display: inline-block;
+  position: relative;
+  top: 100%;
 }
 
 .up > .mole {
-  margin-top: 20px;  
+  top: 20px; 
   transform: none;
 }
 .boom > .mole {
