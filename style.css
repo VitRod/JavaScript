@@ -1,0 +1,66 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 20px;
+}
+.gamefield {
+  height: 200px;
+  background: url(img/landscape.png) no-repeat;
+  background-size: auto 200px;
+}
+.hole {
+  display: inline-block;
+  width: 100px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.mole {
+  width: 30px;
+  height: 50px;
+  background: url(img/balloon.png) no-repeat center center;
+  background-size: 100% auto;
+  margin-left: 10px;
+  margin-top: 200px;
+  transition: margin-top 0.5s;
+}
+
+.up > .mole {
+  margin-top: 20px;  
+  transform: none;
+}
+.boom > .mole {
+  background-image: url(img/boom.png);
+}
+
+.captured > .mole {
+  margin-left: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.startButton {
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 10px;
+  line-height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #ccc;
+}
+.startButton:hover {
+  background-color: #ddd;
+}
+.scoreboard {
+  height: 50px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  line-height: 30px;
+}
+.scoreboard::before {
+  content: attr(data-points) ' ';
+}
