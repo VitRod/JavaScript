@@ -15,7 +15,7 @@ body {
 .gamefield {
   width: 100%;
   height: 300px;
-  min-height 250px;
+  min-height: 250px;
   max-height: calc( 100% - 50px );
   padding: 0 20%;
   box-sizing: border-box;
@@ -77,4 +77,8 @@ body {
 }
 .scoreboard::before {
   content: attr(data-points) ' ';
+}
+
+.timer {
+  display: none;
 }
