@@ -21,6 +21,7 @@ body {
   box-sizing: border-box;
   background: #afafaf url(img/landscape.png) no-repeat;
   background-size: 100% 100%;
+  font-size: 0;
 }
 .hole {
   display: inline-block;

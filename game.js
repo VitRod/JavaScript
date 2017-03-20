@@ -12,6 +12,17 @@ function randomItem(list) {
   return next;
 }
 
+function loadTopScore() {
+  if (!localStorage) return 0;
+  const score = localStorage.getItem('topScore');
+  return score ? score : 0;
+}
+
+function saveTopScore(score) {
+  if (!localStorage) return;
+  localStorage.setItem('topScore', score);
+}
+
 function show(hole) {
   hole.classList.remove('boom');
   hole.classList.add('up');
@@ -23,6 +34,7 @@ function hide(hole) {
 
 function updateScoreboard(points) {
   scoreboard.dataset.points = points;
+  bestScore.dataset.points = topScore;
 }
 
 function handleClick() {
@@ -51,9 +63,12 @@ function tic() {
   setTimeout(() => {
     if (isStarted) {
       next();
-      tic(); 
+      tic();
     } else {
       startButton.style.display = 'initial';
+      topScore = Math.max(points, topScore);
+      saveTopScore(topScore);
+      updateScoreboard(points);
     }
   }, rand(1000, 3500));
 }
@@ -64,16 +79,20 @@ function start() {
   startButton.style.display = 'none';
   isStarted = true;
   tic();
-  
+
   setTimeout(() => isStarted = false, 15000);
 }
 
 let timeout, isStarted = false;
+let topScore = loadTopScore();
+let points = 0;
+
 const holes = document.getElementsByClassName('hole');
 const moles = document.getElementsByClassName('mole');
-const scoreboard = document.querySelector('.scoreboard');
-let points = 0;
+const scoreboard = document.getElementById('currentScore');
+const bestScore = document.getElementById('topScore');
 const startButton = document.querySelector('.startButton');
-
 Array.from(moles).forEach(mole => mole.addEventListener('click', handleClick));
 startButton.addEventListener('click', start);
+
+updateScoreboard(points);

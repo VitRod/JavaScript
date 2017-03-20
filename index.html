@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="scoreboard" data-points="0">очков <button class="startButton">Начать!</button></div>
-<main class="gamefield">
-  <div class="hole">
-    <div class="mole"></div>
-  </div><!--
-  --><div class="hole">
-    <div class="mole"></div>
-  </div><!--
-  --><div class="hole">
-    <div class="mole"></div>
-  </div><!--
-  --><div class="hole">
-    <div class="mole"></div>
-  </div><!--
-  --><div class="hole">
-    <div class="mole"></div>
-  </div>
-</main>
-<script src="game.js"></script>
+  <figure>
+    <span class="scoreboard" id="currentScore" data-points="0">очков</span>
+    <button class="startButton">Начать!</button>
+    <strong>Лучший результат: <span class="scoreboard" id="topScore" data-points="0">очков</span></strong>
+  </figure>
+
+  <main class="gamefield">
+    <div class="hole">
+      <div class="mole"></div>
+    </div>
+    <div class="hole">
+      <div class="mole"></div>
+    </div>
+    <div class="hole">
+      <div class="mole"></div>
+    </div>
+    <div class="hole">
+      <div class="mole"></div>
+    </div>
+    <div class="hole">
+      <div class="mole"></div>
+    </div>
+  </main>
+  <script src="game.js"></script>
 </body>
