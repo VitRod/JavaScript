@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <figure>
+  <figure class="bar">
+    <span class="phase">
+      <button class="startButton">Начать!</button>
+      <span class="timer">00:00</span>
+    </span>
     <span class="scoreboard" id="currentScoreView" data-points="0">очков</span>
-    <button class="startButton">Начать!</button>
-    <span class="timer">00:00</span>
-    <strong>Лучший результат: <span class="scoreboard" id="topScoreView" data-points="0">очков</span></strong>
+    <span class="thebest">[лучшее: <span class="scoreboard" id="topScoreView" data-points="0">очков]</span></span>
   </figure>
 
   <main class="gamefield">
