@@ -42,8 +42,8 @@ function nextBubble() {
   showBubble(bubble);
   bubble.timeout = setTimeout(() => {
     hideBubble(bubble);
-    nextBubble();
-  }, 2000);
+  }, rand(800, 2100));
+  setTimeout(nextBubble, rand(800, 2100));
 }
 
 function handleBubbleClick() {
@@ -52,7 +52,6 @@ function handleBubbleClick() {
   incPoints();
   boomBubble(bubble);
   hideBubble(bubble);
-  nextBubble();
 }
 
 function updateScoreboard() {
