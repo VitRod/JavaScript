@@ -25,5 +25,10 @@ const startButton = document.querySelector('.startButton');
 
 startButton.addEventListener('click', () => {
   hideButton();
-  showBubble(lines[rand(0, lines.length - 1)]);
+  const bubble = lines[rand(0, lines.length - 1)];
+  showBubble(bubble);
+  setTimeout(() => {
+    hideBubble(bubble);
+    showButton();
+  }, 2000);
 });
