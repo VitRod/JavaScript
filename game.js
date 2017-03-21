@@ -35,6 +35,9 @@ function boomBubble(line) {
 }
 
 function nextBubble() {
+  if (!isGameStarted) {
+    return resetGame();
+  }
   const bubble = getRandomBubble();
   showBubble(bubble);
   bubble.timeout = setTimeout(() => {
@@ -61,8 +64,29 @@ function incPoints() {
   updateScoreboard();
 }
 
+function resetPoints() {
+  currentPoints = 0;
+  updateScoreboard();
+}
 
-let currentPoints = 0;
+function startGame() {
+  resetPoints();
+  isGameStarted = true;
+  hideButton();
+  nextBubble();
+  setInterval(stopGame, GAME_TIMEOUT)
+}
+
+function resetGame() {
+  showButton();
+}
+
+function stopGame() {
+  isGameStarted = false;
+}
+
+const GAME_TIMEOUT = 15000;
+let currentPoints = 0, isGameStarted = false;
 const lines = document.getElementsByClassName('hole');
 const bubbles = document.getElementsByClassName('bubble');
 const startButton = document.querySelector('.startButton');
@@ -71,8 +95,4 @@ const scoreboard = document.getElementById('currentScoreView');
 for (let bubble of bubbles) {
   bubble.addEventListener('click', handleBubbleClick);
 }
-
-startButton.addEventListener('click', () => {
-  hideButton();
-  nextBubble();
-});
+startButton.addEventListener('click', startGame);
