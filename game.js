@@ -5,7 +5,12 @@ function rand(from, to) {
 }
 
 function getRandomBubble() {
-  return lines[rand(0, lines.length - 1)];
+  const next = lines[rand(0, lines.length - 1)];
+  if (getRandomBubble.prev && next === getRandomBubble.prev) {
+    return getRandomBubble();
+  }
+  getRandomBubble.prev = next;
+  return next;
 }
 
 function showButton() {
