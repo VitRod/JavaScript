@@ -1,5 +1,9 @@
 'use strict';
 
+function rand(from, to) {
+  return Math.floor((to - from + 1) * Math.random()) + from;
+}
+
 function showButton() {
   startButton.style.display = 'initial';
 }
@@ -21,5 +25,5 @@ const startButton = document.querySelector('.startButton');
 
 startButton.addEventListener('click', () => {
   hideButton();
-  showBubble(lines[3]);
+  showBubble(lines[rand(0, lines.length - 1)]);
 });
