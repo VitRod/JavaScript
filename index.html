@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Игра в шарики на JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="phase">
+      <span class="timer">00:00</span>
+    </div>
+    <div>
+      <span class="scoreboard" id="currentScoreView" data-points="0">очков</span>
+    </div>
+    <div>
+      Лучший результат: <span class="scoreboard" id="topScoreView" data-points="0">очков</span>
+    </div>
+  </header>
+
+  <main class="gamefield">
+    <button class="startButton">Начать!</button>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+  </main>
+  <footer>Сбей столько шариков сколько сможешь. У тебя 15 секунд!</footer>
+  <script src="game.js"></script>
+</body>

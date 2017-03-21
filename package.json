@@ -1,0 +1,27 @@
+{
+  "name": "neto-bubble-game",
+  "version": "1.0.0",
+  "description": "Simple HTML5 bubble game",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.html' '**/*.css' '**/*.js' '**/*.png' '**/*.jpeg' '**/*.jpg'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netology-code/wg-hj-fl-game.git"
+  },
+  "keywords": ["game", "javascript", "vanilla javascript", "html5", "bubbles"],
+  "contributors": [
+    "Lina Dubrovskaya <linoch-ka@yandex.ru>",
+    "Dima Fitiskin <dfitiskin@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netology-code/wg-hj-fl-game/issues"
+  },
+  "homepage": "https://github.com/netology-code/wg-hj-fl-game#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}

@@ -1,0 +1,103 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+}
+
+.gamefield {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  min-height: 200px;
+  max-height: calc( 100% - 70px );
+  padding: 0 20%;
+  box-sizing: border-box;
+  background: #afafaf url(img/landscape.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 0;
+}
+
+.hole {
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bubble {
+  width: 30px;
+  height: 50px;
+  background: url(img/balloon.png) no-repeat center center;
+  background-size: 100% auto;
+  transition: top 0.45s;
+  display: inline-block;
+  position: relative;
+  top: 100%;
+}
+
+.up > .bubble {
+  top: 20px;
+}
+
+.boom > .bubble {
+  background-image: url(img/boom.png);
+}
+
+.captured > .bubble {
+  margin-left: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+
+header {
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px 50px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #ccc;
+  font-size: 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.startButton:hover {
+  background-color: #ddd;
+}
+.scoreboard::before {
+  content: attr(data-points) ' ';
+}
+.timer {
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: inherit;
+  box-shadow: 0 0 1px #ccc;
+}
+footer {
+  padding: 10px;
+  text-align: center;
+}
