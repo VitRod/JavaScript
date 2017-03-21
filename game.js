@@ -46,14 +46,27 @@ function nextBubble() {
 function handleBubbleClick() {
   const bubble = this.parentElement;
   clearTimeout(bubble.timeout);
+  incPoints();
   boomBubble(bubble);
   hideBubble(bubble);
   nextBubble();
 }
 
+function updateScoreboard() {
+  scoreboard.dataset.points = currentPoints;
+}
+
+function incPoints() {
+  ++currentPoints;
+  updateScoreboard();
+}
+
+
+let currentPoints = 0;
 const lines = document.getElementsByClassName('hole');
 const bubbles = document.getElementsByClassName('bubble');
 const startButton = document.querySelector('.startButton');
+const scoreboard = document.getElementById('currentScoreView');
 
 for (let bubble of bubbles) {
   bubble.addEventListener('click', handleBubbleClick);
