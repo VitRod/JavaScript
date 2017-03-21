@@ -91,13 +91,12 @@ function tic() {
       tic();
     } else {
       startButton.style.display = 'initial';
-      timer.style.display = 'none';
       topScore = Math.max(points, topScore);
       saveTopScore(topScore);
       updateScoreboard(points);
       clearInterval(timerInterval);
     }
-  }, rand(1000, 3500));
+  }, rand(500, 2500));
 }
 
 function start() {
@@ -105,12 +104,10 @@ function start() {
   startedAt = Date.now();
   updateScoreboard(points);
   startButton.style.display = 'none';
-  timer.style.display = 'initial';
   isStarted = true;
+  setTimeout(() => isStarted = false, GAME_TIMEOUT);
   timerInterval = setInterval(updateTimer, 250);
   tic();
-
-  setTimeout(() => isStarted = false, GAME_TIMEOUT);
 }
 
 const GAME_TIMEOUT = 15000;
@@ -119,12 +116,12 @@ let topScore = loadTopScore();
 let points = 0;
 
 const holes = document.getElementsByClassName('hole');
-const moles = document.getElementsByClassName('mole');
+const bubbles = document.getElementsByClassName('bubble');
 const scoreboard = document.getElementById('currentScoreView');
 const bestScore = document.getElementById('topScoreView');
 const startButton = document.querySelector('.startButton');
 const timer = document.querySelector('.timer');
-Array.from(moles).forEach(mole => mole.addEventListener('click', handleClick));
+Array.from(bubbles).forEach(bubble => bubble.addEventListener('click', handleClick));
 startButton.addEventListener('click', start);
 
 updateScoreboard(points);

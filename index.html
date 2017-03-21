@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Браузерная игра на js</title>
+  <title>Игра в шарики на JavaScript</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <figure class="bar">
-    <span class="phase">
-      <button class="startButton">Начать!</button>
+  <header>
+    <div class="phase">
       <span class="timer">00:00</span>
-    </span>
-    <span class="scoreboard" id="currentScoreView" data-points="0">очков</span>
-    <span class="thebest">[лучшее: <span class="scoreboard" id="topScoreView" data-points="0">очков]</span></span>
-  </figure>
+    </div>
+    <div>
+      <span class="scoreboard" id="currentScoreView" data-points="0">очков</span>
+    </div>
+    <div>
+      Лучший результат: <span class="scoreboard" id="topScoreView" data-points="0">очков</span>
+    </div>
+  </header>
 
   <main class="gamefield">
+    <button class="startButton">Начать!</button>
     <div class="hole">
-      <div class="mole"></div>
+      <div class="bubble"></div>
     </div>
     <div class="hole">
-      <div class="mole"></div>
+      <div class="bubble"></div>
     </div>
     <div class="hole">
-      <div class="mole"></div>
+      <div class="bubble"></div>
     </div>
     <div class="hole">
-      <div class="mole"></div>
+      <div class="bubble"></div>
     </div>
     <div class="hole">
-      <div class="mole"></div>
+      <div class="bubble"></div>
     </div>
   </main>
+  <footer>Сбей столько шариков сколько сможешь. У тебя 15 секунд!</footer>
   <script src="game.js"></script>
 </body>
